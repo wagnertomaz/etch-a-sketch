@@ -1,0 +1,162 @@
+:root {
+    --white-color: #dddddd;
+    --dark-grey-color: #151515; 
+    --light-grey-color: #969696;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    outline: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--dark-grey-color);
+}
+
+body::before {
+    content: "";
+    background-image: url('./images/gray-grid-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.06;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    width: 832px;
+    justify-content: space-between;
+}
+
+.button-center {
+    margin-top: 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 832px;
+    height: 832px;
+}
+
+.grid-item {
+    background-color: var(--white-color);
+    border: 1px solid var(--dark-grey-color);
+    border-radius: 3px;
+}
+
+button {
+    background-color: var(--white-color);
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem;
+    padding-right: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--dark-grey-color);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--light-grey-color);
+    color: var(--white-color);
+}
+
+button.hovered {
+    background-color: var(--light-grey-color);
+    color: var(--white-color);
+}
+
+#color-picker {
+    background-color:var(--white-color);
+    border-radius: 4px;
+    padding: 1px 3px;
+    height: auto;
+}
+
+.button-inline {
+    display: flex;
+    gap: 1rem;
+}
+
+.screen-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 14rem;
+}
+
+.screen-title h1 {
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "ELGR" 1,
+        "ELSH" 2;
+    font-size: 11rem;
+    color: var(--white-color);
+}
+
+.screen-title p {
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "ELGR" 1,
+        "ELSH" 2;
+    font-size: 2rem;
+    color: var(--white-color);
+}
+
+#social-media {
+    display: flex;
+    padding-top: 2.5rem;
+    gap: 5rem;
+}
+
+#social-media a {
+    color: var(--white-color);
+}
+
+svg {
+    transition: 0.3s ease-in-out;
+}
+
+.github:hover {
+    color: #333333;
+    color: #444444
+}
+
+.discord:hover {
+    color: #7289DA;
+}
+
+.linkedin:hover {
+    color: #0077B5;
+}
+
+.inv {
+    display: none;
+}
