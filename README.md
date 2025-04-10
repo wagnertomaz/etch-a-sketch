@@ -24,6 +24,7 @@ The app includes features like:
 - Drawing by hovering over grid cells.
 - Erasing individual squares with an eraser mode.
 - Choosing custom colors using a color picker.
+- Painting with a brush that uses random colors.
 - Clearing the entire board with one click.
 - Creating new grids by entering the desired size.
 

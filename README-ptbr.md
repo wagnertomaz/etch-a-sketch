@@ -24,6 +24,7 @@ A aplicação inclui recursos como:
 - Desenhar passando o mouse sobre os quadrados da grade.
 - Apagar quadrados individuais com o modo borracha.
 - Escolher cores personalizadas usando um seletor de cores.
+- Pintar com um pincel que usa cores aleatórias.
 - Limpar todo o quadro com um clique.
 - Criar novas grades informando o tamanho desejado.
 

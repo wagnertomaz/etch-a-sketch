@@ -6,31 +6,45 @@ const eraserGrid = document.querySelector("#eraser-grid");
 const pencilGrid = document.querySelector("#pencil-grid");
 const screenTitle = document.querySelector(".screen-title");
 const mainMenu = document.querySelector("#main-menu");
+const rgbGrid = document.querySelector("#rgb-grid");
 
 let isEraser = false;
+let isRgb = false;
+
+function randomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
 
 function gridCreator() {
     container.innerHTML = "";
     colorPicker.value = "#444444";
 
-    const gridSize = parseInt(prompt("Choose how many squares per side you want in your grid (1-100). For example, 64 will give you a 64x64 grid.", 64));
+    const gridSize = parseInt(prompt("Choose how many squares per side you want in your grid (1-100). For example, 32 will give you a 32x32 grid.", 32));
     if (gridSize <= 100) {
         for (let i = 0; i < gridSize; i++) {
             for (let c = 0; c < gridSize; c++) {
                 const div = document.createElement("div");
 
                 div.classList.add("grid-item");
+                div.setAttribute("data-click", "100");
                 const gridWidth = 832 / gridSize;
                 div.style.width = `${gridWidth}px`;
                 div.style.height = `${gridWidth}px`;
                 div.addEventListener("mouseenter", () => {
                     if (isEraser) {
-                        div.style.backgroundColor = "#dddddd";
                         document.body.style.cursor = "url('./images/eraser.cur'), auto";
+                        div.style.backgroundColor = "#dddddd";
+                    } else if (isRgb) {
+                        document.body.style.cursor = "url('./images/pencil.cur'), auto";
+                        const rgbColor = randomColor(); 
+                        div.style.backgroundColor = `${rgbColor}`;
                     } else {
+                        document.body.style.cursor = "url('./images/pencil.cur'), auto";
                         const color = colorPicker.value;
                         div.style.backgroundColor = `${color}`;
-                        document.body.style.cursor = "url('./images/pencil.cur'), auto";
                     }
                 })
     
@@ -49,14 +63,26 @@ function gridCreator() {
 
 eraserGrid.addEventListener("click", () => {
     isEraser = true;
+    isRgb = false;
     eraserGrid.classList.add("hovered");
     pencilGrid.classList.remove("hovered");
+    rgbGrid.classList.remove("hovered");
 })
 
 pencilGrid.addEventListener("click", () => {
     isEraser = false;
+    isRgb = false;
     pencilGrid.classList.add("hovered");
     eraserGrid.classList.remove("hovered");
+    rgbGrid.classList.remove("hovered");
+})
+
+rgbGrid.addEventListener("click", () => {
+    isRgb = true;
+    isEraser = false;
+    rgbGrid.classList.add("hovered");
+    eraserGrid.classList.remove("hovered");
+    pencilGrid.classList.remove("hovered");
 })
 
 createGrid.addEventListener("click", () => {
@@ -69,6 +95,7 @@ createGrid.addEventListener("click", () => {
     pencilGrid.classList.remove("inv");
     colorPicker.classList.remove("inv");
     mainMenu.classList.remove("inv");
+    rgbGrid.classList.remove("inv");
     createGrid.classList.remove("button-center");
 })
 
