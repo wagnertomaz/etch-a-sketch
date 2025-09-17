@@ -22,7 +22,7 @@ function gridCreator() {
     container.innerHTML = "";
     colorPicker.value = "#444444";
 
-    const gridSize = parseInt(prompt("Choose how many squares per side you want in your grid (1-100). For example, 32 will give you a 32x32 grid.", 32));
+    const gridSize = parseInt(prompt("Escolha quantos quadrados por lado você quer na sua grade (1-100). Por exemplo, 32 criará uma grade 32x32.", 32));
     if (gridSize <= 100) {
         for (let i = 0; i < gridSize; i++) {
             for (let c = 0; c < gridSize; c++) {
@@ -56,7 +56,7 @@ function gridCreator() {
             }
         }      
     } else if (gridSize === null || isNaN(gridSize) || gridSize > 100) {
-        alert("Invalid input. Please enter a whole number between 1 and 100. This number determines how many squares will be created in each row and column of the grid.");
+        alert("Entrada inválida. Por favor, insira um número inteiro entre 1 e 100. Esse número determina quantos quadrados serão criados em cada linha e coluna da grade.");
         location.reload();
     }
 }
