@@ -8,7 +8,7 @@ O objetivo é recriar o brinquedo de desenho usando tecnologias web.
 
 ---
 
-## 📚 Sobre o Projeto
+## Sobre o Projeto
 
 O Etch-a-Sketch permite:
 - Desenhar passando o mouse sobre a grade  
@@ -19,7 +19,7 @@ Este projeto é uma ótima prática para consolidar conhecimentos em HTML, CSS e
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **HTML5**  
 - **CSS3**  
